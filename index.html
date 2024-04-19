@@ -7,17 +7,6 @@
     // Adăugarea cookie-urilor
 document.cookie = "name=oeschger; SameSite=None; Secure";
 document.cookie = "favorite_food=tripe; SameSite=None; Secure";
-    // Funcția pentru afișarea valorii cookie-urilor
-    function showCookies() {
-        var cookies = document.cookie.split('; ');
-        var cookieValues = "";
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].split('=');
-            cookieValues += cookie[0] + ": " + cookie[1] + "\n";
-        }
-        alert(cookieValues);
-    }
-	/ Note that we are setting `SameSite=None;` in this example because the example
 
 function showCookies() {
   const output = document.getElementById("cookies");
