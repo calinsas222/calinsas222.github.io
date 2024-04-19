@@ -13,6 +13,7 @@
         var cookies = document.cookie.split('; ');
         var cookieValues = "";
         for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].split('=');
             cookieValues += cookie[0] + ": " + cookie[1] + "\n";
         }
         alert(cookieValues);
