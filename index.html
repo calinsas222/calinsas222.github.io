@@ -7,6 +7,13 @@
     // Adăugarea cookie-urilor
 document.cookie = "name=oeschger; SameSite=https://www.facebook.com/; Secure";
 document.cookie = "favorite_food=tripe; SameSite=https://www.facebook.com/; Secure";
+document2.cookie = "test1=Hello; SameSite=https://www.facebook.com/; Secure";
+document2.cookie = "test2=World; SameSite=https://www.facebook.com/; Secure";
+
+const cookieValue = document2.cookie
+  .split("; ")
+  .find((row) => row.startsWith("test2="))
+  ?.split("=")[1];
 
 
 function showCookies() {
@@ -19,14 +26,6 @@ function clearOutputCookies() {
   output.textContent = "";
 }
 
-document2.cookie = "test1=Hello; SameSite=https://www.facebook.com/; Secure";
-document2.cookie = "test2=World; SameSite=https://www.facebook.com/; Secure";
-
-const cookieValue = document2.cookie
-  .split("; ")
-  .find((row) => row.startsWith("test2="))
-  ?.split("=")[1];
-  
 function showCookies2() {
   const output = document2.getElementById("cookies");
   output.textContent = `> ${document2.cookie}`;
