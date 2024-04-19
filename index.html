@@ -1,53 +1,102 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Template</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+ 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap-theme.min.css">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+ 
 <script>
-    // Adăugarea cookie-urilor
-document.cookie = "name=oeschger; SameSite=none; Secure";
-document.cookie = "favorite_food=tripe; SameSite=none; Secure";
-document.cookie = "test1=Hello; SameSite=none; Secure";
-document.cookie = "test2=World; SameSite=none; Secure";
-
-const cookieValue = document.cookie
-  .split("; ")
-  .find((row) => row.startsWith("test2="))
-  ?.split("=")[1];
-
-
-function showCookies() {
-  const output = document.getElementById("cookies");
-  output.textContent = `> ${document.cookie}`;
+    document.cookie = "location=xdxd; path=/";
+   
+    function getSampleCookieValue() {
+    const cookieValue = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("location"))
+        ?.split("=")[1];
+    const output = document.getElementById("message-display");
+    if (cookieValue) {
+        output.textContent = `> ${cookieValue}`;
+    } else {
+        output.textContent = "> Cookie 'test2' not found.";
+    }
+    }
+    function clearOutputCookieValue() {
+    const output = document.getElementById("message-display");
+    output.textContent = "";
+    }
+   function setCookie(name, value) {
+    var cookieString = name + "=" + encodeURIComponent(value) + "; path=/";
+    document.cookie = cookieString;
+    document.getElementById("message-display").textContent = "Cookie '" + name + "' set successfully.";
+    }
+    function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 }
-
-function clearOutputCookies() {
-  const output = document.getElementById("cookies");
-  output.textContent = "";
-}
-
-function showCookies2() {
-  const output = document.getElementById("cookies");
-  output.textContent = `> ${document.cookie}`;
-}
-
-function clearOutputCookies2() {
-  const output = document.getElementById("cookies");
-  output.textContent = "";
-}
+    function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var c = cookies[i].trim();
+        if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+    }
+    return null;
+    }
+    function deleteCookie(name) {
+    document.cookie = name + "=; Max-Age=0; path=/";
+    document.getElementById("message-display").textContent = "Cookie '" + name + "' deleted successfully.";
+    }
+    function checkACookieExists() {
+        if (document.cookie.split(";").some((item) => item.trim().startsWith("user="))) {
+            document.getElementById("message-display").textContent = '> The cookie "user" exists';
+        } else {
+            document.getElementById("message-display").textContent = '> No cookie "user" found';
+        }
+    }
+    function clearOutputACookieExists() {
+        const output = document.getElementById("message-display");
+        output.textContent = "";
+    }
+    function checkCookieHasASpecificValue() {
+        if (document.cookie.split(";").some((item) => item.includes("JaneDoe"))) {
+            const output = document.getElementById("message-display");
+            document.getElementById("message-display").textContent = '> The cookie "user" has a value of JaneDoe"';
+        }
+    }
+    function clearASpecificValueOfTheCookie() {
+        const output = document.getElementById("message-display");
+        output.textContent = "";
+    }
 </script>
-
-<p> Ex1 </p>
-<button onclick="showCookies()">Show cookies</button>
-<button onclick="clearOutputCookies()">Clear</button>
-
-<p> Ex2 </p>
-<button onclick="showCookies2()">Show cookies</button>
-<button onclick="clearOutputCookies2()">Clear</button>
-<div>
-  <code id="cookies"></code>
-</div>
-
+ 
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Cookie Shop</h1>
+        <p>Cookie lab.</p>
+        <button type="button" class="btn btn-primary" onclick="setCookie('user', 'JaneDoe')">Set Cookie</button>
+        <button type="button" class="btn btn-secondary" onclick="alert(getCookie('user'))">Show Cookie</button>
+        <button type="button" class="btn btn-secondary" onclick="deleteCookie('user')">Delete Cookie</button>
+        <button type="button" class="btn btn-secondary" onclick="checkACookieExists()">Check a cookie exists</button>
+        <button type="button" class="btn btn-secondary" onclick="clearOutputACookieExists()">Clear output cookie exists</button>
+        <button type="button" class="btn btn-secondary" onclick="checkCookieHasASpecificValue()">Check specific value</button>
+        <button type="button" class="btn btn-secondary" onclick="clearASpecificValueOfTheCookie()">Clear check specific value</button>
+        <button type="button" class="btn btn-secondary" onclick="getSampleCookieValue()">Get sample cookie</button>
+        <button type="button" class="btn btn-secondary" onclick="clearOutputCookieValue()">clear output sample cookie</button>
+        <button type="button" class="btn btn-secondary" onclick="deleteCookie('location')">clear sample cookie</button>
+        <div id="message-display" style="margin-top: 20px;"></div>
+    </header>
 </body>
 </html>
-</html>
+ 
