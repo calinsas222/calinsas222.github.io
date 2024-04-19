@@ -7,10 +7,10 @@
     // Adăugarea cookie-urilor
 document.cookie = "name=oeschger; SameSite=none; Secure";
 document.cookie = "favorite_food=tripe; SameSite=none; Secure";
-document2.cookie = "test1=Hello; SameSite=none; Secure";
-document2.cookie = "test2=World; SameSite=none; Secure";
+document.cookie = "test1=Hello; SameSite=none; Secure";
+document.cookie = "test2=World; SameSite=none; Secure";
 
-const cookieValue = document2.cookie
+const cookieValue = document.cookie
   .split("; ")
   .find((row) => row.startsWith("test2="))
   ?.split("=")[1];
@@ -27,12 +27,12 @@ function clearOutputCookies() {
 }
 
 function showCookies2() {
-  const output = document2.getElementById("cookies");
+  const output = document.getElementById("cookies");
   output.textContent = `> ${document2.cookie}`;
 }
 
 function clearOutputCookies2() {
-  const output = document2.getElementById("cookies");
+  const output = document.getElementById("cookies");
   output.textContent = "";
 }
 </script>
