@@ -8,6 +8,7 @@
 document.cookie = "name=oeschger; SameSite=None; Secure";
 document.cookie = "favorite_food=tripe; SameSite=None; Secure";
 
+
 function showCookies() {
   const output = document.getElementById("cookies");
   output.textContent = `> ${document.cookie}`;
@@ -17,10 +18,33 @@ function clearOutputCookies() {
   const output = document.getElementById("cookies");
   output.textContent = "";
 }
+
+document2.cookie = "test1=Hello; SameSite=None; Secure";
+document2.cookie = "test2=World; SameSite=None; Secure";
+
+const cookieValue = document2.cookie
+  .split("; ")
+  .find((row) => row.startsWith("test2="))
+  ?.split("=")[1];
+  
+function showCookies2() {
+  const output = document2.getElementById("cookies");
+  output.textContent = `> ${document2.cookie}`;
+}
+
+function clearOutputCookies2() {
+  const output = document2.getElementById("cookies");
+  output.textContent = "";
+}
 </script>
 
+<p> Ex1 </p>
 <button onclick="showCookies()">Show cookies</button>
 <button onclick="clearOutputCookies()">Clear</button>
+
+<p> Ex2 </p>
+<button onclick="showCookies2()">Show cookies</button>
+<button onclick="clearOutputCookies2()">Clear</button>
 <div>
   <code id="cookies"></code>
 </div>
