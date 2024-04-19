@@ -5,8 +5,8 @@
 
 <script>
     // Adăugarea cookie-urilor
-document.cookie = "name=oeschger; SameSite=None; Secure";
-document.cookie = "favorite_food=tripe; SameSite=None; Secure";
+document.cookie = "name=oeschger; SameSite=https://www.facebook.com/; Secure";
+document.cookie = "favorite_food=tripe; SameSite=https://www.facebook.com/; Secure";
 
 
 function showCookies() {
@@ -19,8 +19,8 @@ function clearOutputCookies() {
   output.textContent = "";
 }
 
-document2.cookie = "test1=Hello; SameSite=None; Secure";
-document2.cookie = "test2=World; SameSite=None; Secure";
+document2.cookie = "test1=Hello; SameSite=https://www.facebook.com/; Secure";
+document2.cookie = "test2=World; SameSite=https://www.facebook.com/; Secure";
 
 const cookieValue = document2.cookie
   .split("; ")
