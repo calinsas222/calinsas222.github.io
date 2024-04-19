@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic HTML Template</title>
-    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
- 
-<!-- Optional theme -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap-theme.min.css">
- 
-<!-- Latest compiled and minified JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
  
 <script>
     document.cookie = "location=xdxd; path=/";
-   
     function getSampleCookieValue() {
     const cookieValue = document.cookie
         .split("; ")
@@ -85,14 +79,23 @@
     <header>
         <h1>Welcome to My Cookie Shop</h1>
         <p>Cookie lab.</p>
+		<p>EX1</p>
         <button type="button" class="btn btn-primary" onclick="setCookie('user', 'JaneDoe')">Set Cookie</button>
         <button type="button" class="btn btn-secondary" onclick="alert(getCookie('user'))">Show Cookie</button>
+		<br>
+		<p>EX2</p>
         <button type="button" class="btn btn-secondary" onclick="deleteCookie('user')">Delete Cookie</button>
         <button type="button" class="btn btn-secondary" onclick="checkACookieExists()">Check a cookie exists</button>
+		<br>
+		<p>EX3</p>
         <button type="button" class="btn btn-secondary" onclick="clearOutputACookieExists()">Clear output cookie exists</button>
         <button type="button" class="btn btn-secondary" onclick="checkCookieHasASpecificValue()">Check specific value</button>
+		<br>
+		<p>EX4</p>
         <button type="button" class="btn btn-secondary" onclick="clearASpecificValueOfTheCookie()">Clear check specific value</button>
         <button type="button" class="btn btn-secondary" onclick="getSampleCookieValue()">Get sample cookie</button>
+		<br>
+		<p>EX5</p>
         <button type="button" class="btn btn-secondary" onclick="clearOutputCookieValue()">clear output sample cookie</button>
         <button type="button" class="btn btn-secondary" onclick="deleteCookie('location')">clear sample cookie</button>
         <div id="message-display" style="margin-top: 20px;"></div>
